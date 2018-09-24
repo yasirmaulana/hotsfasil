@@ -11,7 +11,7 @@ var app = new Vue({
   },
 
   mounted: function(){
-    // this.getAdmin()
+    // this.getReviewer()
     // this.getSurah()
   },
 
@@ -54,14 +54,14 @@ var app = new Vue({
       return form_data;
     },
 
-    saveNewAdmin: function(){
+    saveNewReviewer: function(){
       let cek = this.validasiForm()
       if(cek){
         // console.log('dodododododdod')
         var formData = this.toFormdata(this.newReviewer)
-        axios.post(url+"saveNewAdmin", formData)
+        axios.post(url+"saveNewReviewer", formData)
           .then(function(response){
-            swal('Menambahkan Admin Baru', 'Berhasil diinput', 'success')
+            swal('Menambahkan Reviewer Baru', 'Berhasil diinput', 'success')
             // console.log(response)
           })
           .catch(function(error){

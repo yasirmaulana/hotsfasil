@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hots</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="responsive.css">
+  </head>
+  <body>
+
+    <header class="header">
+      <div class="header__inner">
+        <img class="header__logo" src="../images/hots.png" alt="iconic view of a cityscape">
+        <h1 class="header__title">
+          Hafizh on The Street
+        </h1>
+        <a id="menu" class="header__menu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"/>
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <nav id="drawer" class="nav">
+      <ul class="nav__list">
+        <li class="nav__item"><a href="view_selectAdmin.php">Admin</a></li>
+        <li class="nav__item"><a href="view_selectReviewer.php">Reviewer</a></li>
+        <li class="nav__item"><a href="view_selectGrup.php">Grup</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="content">
+        <section class="scores">
+          <table class="scores__table">
+            <thead>
+              <tr>
+                <th colspan="2">Dashboard</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Jumlah Admin</td>
+                <td>: # </td>
+              </tr>
+              <tr>
+                <td>Jumlah Reviewer</td>
+                <td>: # </td>
+              </tr>
+              <tr>
+                <td>Jumlah Grup</td>
+                <td>: #</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
+
+      <footer>
+        <ul>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">Follow us on Twitter</a></li>
+        </ul>
+      </footer>
+
+    </main>
+
+    <script>
+      /*
+       * Open the drawer when the menu ison is clicked.
+       */
+      var menu = document.querySelector('#menu');
+      var main = document.querySelector('main');
+      var drawer = document.querySelector('.nav');
+
+      menu.addEventListener('click', function(e) {
+        drawer.classList.toggle('open');
+        e.stopPropagation();
+      });
+      main.addEventListener('click', function() {
+        drawer.classList.remove('open');
+      });
+
+    </script>
+  </body>
+</html>

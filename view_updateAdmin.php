@@ -4,18 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Form Menambahkan Admin</title>
+  <title>Form Admin Update</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <div id="addAdmin">
+  <div id="selectAdmin">
     <div class="container" style="margin-top: 10px;margin-bottom: 30px">
       <div class="row">
 
-          <div class="col-xs-12 col-sm-12 col-lg-12">
-            <h3>Form Menambahkan Admin</h3>
+          {{this.adminSelected}}
+          <!-- <div class="col-xs-12 col-sm-12 col-lg-12">
+            <h3>Form Admin Update</h3>
             <br>
             <form>
               <div class="form-group">
@@ -34,7 +35,7 @@
               <a class="btn btn-success" type="submit" name="action" @click="saveNewAdmin()">add Admin</a>
               <a type="button" class="btn btn-info" href="view_selectAdmin.php">cancel</a>
             </form>
-          </div>
+          </div> -->
 
       </div>
     </div>
@@ -46,6 +47,6 @@
   <!-- <script type="text/javascript" src="../sweetalert.js"></script>
   <script type="text/javascript" src="../axios.js"></script>
   <script type="text/javascript" src="../vue.js"></script> -->
-  <script type="text/javascript" src="controller_addAdmin.js"></script>
+  <script type="text/javascript" src="controller_selectAdmin.js"></script>
 </body>
 </html>

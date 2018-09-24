@@ -10,29 +10,29 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <div id="addAdmin">
+  <div id="addReviewer">
     <div class="container" style="margin-top: 10px;margin-bottom: 30px">
       <div class="row">
 
           <div class="col-xs-12 col-sm-12 col-lg-12">
-            <h3>Form Menambahkan Admin</h3>
+            <h3>Form Menambahkan Reviewer</h3>
             <br>
             <form>
               <div class="form-group">
                 <label for="nm">Nama :</label>
-                <input id="nm" type="text" class="form-control" v-model="newAdmin.nama">
+                <input id="nm" type="text" class="form-control" v-model="newReviewer.nama">
               </div>
               <div class="form-group">
                 <label for="wa1">Nomor WA 1 :</label>
-                <input id="wa1" type="text" class="form-control" v-model="newAdmin.nomorWA1">
+                <input id="wa1" type="text" class="form-control" v-model="newReviewer.nomorWA1">
               </div>
               <div class="form-group">
                 <label for="wa2">Nomor WA 2 (optional) :</label>
-                <input id="wa2" type="text" class="form-control" v-model="newAdmin.nomorWA2">
+                <input id="wa2" type="text" class="form-control" v-model="newReviewer.nomorWA2">
               </div>
 
-              <a class="btn btn-success" type="submit" name="action" @click="saveNewAdmin()">add Admin</a>
-              <a type="button" class="btn btn-info" href="view_selectAdmin.php">cancel</a>
+              <a class="btn btn-success" type="submit" name="action" @click="saveNewReviewer()">add Reviewer</a>
+              <a type="button" class="btn btn-info" href="view_selectReviewer.php">cancel</a>
             </form>
           </div>
 
@@ -46,6 +46,6 @@
   <!-- <script type="text/javascript" src="../sweetalert.js"></script>
   <script type="text/javascript" src="../axios.js"></script>
   <script type="text/javascript" src="../vue.js"></script> -->
-  <script type="text/javascript" src="controller_addAdmin.js"></script>
+  <script type="text/javascript" src="controller_addReviewer.js"></script>
 </body>
 </html>

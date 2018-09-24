@@ -1,10 +1,10 @@
-var url = "http://localhost/hots/hotsfasil/model_selectAdmin.php?action="
+var url = "http://localhost/hots/hotsfasil/model_admin.php?action="
 var app = new Vue({
   el: "#selectAdmin",
 
   data: {
     arrAdmin: [],
-
+    adminSelected: {'dodol': 'asik'}
   },
 
   mounted: function(){
@@ -13,17 +13,20 @@ var app = new Vue({
 
   methods: {
     getAdmin: function(){
-      console.log("dodol banget si inih>>>>");
       axios.get(url+"readAdmin")
        .then(function(response){
          app.arrAdmin = response.data.admins
-         console.log('>>>>>>>>>>>>> admin',this.arrAdmin)
+         // console.log('>>>>>>>>>>>>> admin',this.arrAdmin)
        })
        .catch(function(error){
-         console.log('============',error)
+         // console.log('============',error)
        })
     },
 
+    getAdminSelected: function(objAdmin){
+      this.adminSelected = objAdmin
+      // alert(adminSelected.nama)
+    }
 
   }
 
