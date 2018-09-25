@@ -12,7 +12,7 @@ if(isset($_GET['action'])){
 
 // MENAMPILKAN DATA REVIEWER
 if($action == 'readReviewer'){
-  $result = $conn->query("SELECT * FROM hots_reviewer ORDER BY id_fasil");
+  $result = $conn->query("SELECT * FROM view_hots_reviewer ORDER BY fasil");
   $reviewers = array();
 
   while($row = $result->fetch_assoc()){
@@ -22,21 +22,34 @@ if($action == 'readReviewer'){
   $res['reviewers'] = $reviewers;
 }
 
+// MENAMPILKAN DATA FASIL
+if($action == 'readFasil'){
+  $result = $conn->query("SELECT * FROM hots_fasil ORDER BY nama");
+  $fasils = array();
+
+  while($row = $result->fetch_assoc()){
+    array_push($fasils, $row);
+  }
+
+  $res['fasils'] = $fasils;
+}
+
 // MENYIMPAN DATA REVIEWER
 if($action == 'saveNewReviewer'){
 
   $nama = $_POST['nama'];
   $nomorWA1 = $_POST['nomorWA1'];
   $nomorWA2 = $_POST['nomorWA2'];
+  $id_fasil = $_POST['id_fasil'];
 
-  $result = $conn->query("INSERT INTO hots_reviewer(nama, nomorWA, nomorWA2) VALUES ('$nama', '$nomorWA1', '$nomorWA2')");
+  $result = $conn->query("INSERT INTO hots_reviewer(nama, nomorWA, nomorWA2, id_fasil) VALUES ('$nama', '$nomorWA1', '$nomorWA2', '$id_fasil')");
 
-  // $cek = "INSERT INTO hots_admin(nama, nomorWA, nomorWA2) VALUES ('$nama', '$nomorWA1', '$nomorWA2')";
+  $cek = "INSERT INTO hots_reviewer(nama, nomorWA, nomorWA2, id_fasil) VALUES ('$nama', '$nomorWA1', '$nomorWA2', '$id_fasil')";
 
   if($result){
-    // $res['message'] = "laporan berhasil tersimpan";
+    $res['message'] = "laporan berhasil tersimpan";
   } else {
-    // $res['error'] = $cek;
+    $res['error'] = $cek;
   }
 
 }

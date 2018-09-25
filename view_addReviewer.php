@@ -19,6 +19,13 @@
             <br>
             <form>
               <div class="form-group">
+                <label for="fs">Fasil :</label>
+                <select class="form-control" id="fs" v-model="newReviewer.id_fasil">
+                  <option value="" disabled selected>Pilih Fasil</option>
+                  <option v-for="fasil in arrFasil" :value="fasil.id">{{fasil.nama}}</option>
+                </select>
+              </div>
+              <div class="form-group">
                 <label for="nm">Nama :</label>
                 <input id="nm" type="text" class="form-control" v-model="newReviewer.nama">
               </div>
@@ -32,7 +39,7 @@
               </div>
 
               <a class="btn btn-success" type="submit" name="action" @click="saveNewReviewer()">add Reviewer</a>
-              <a type="button" class="btn btn-info" href="view_selectReviewer.php">cancel</a>
+              <a type="button" class="btn btn-info" href="view_selectReviewer.php">back to list</a>
             </form>
           </div>
 

@@ -19,6 +19,13 @@
             <br>
             <form>
               <div class="form-group">
+                <label for="fs">Fasil :</label>
+                <select class="form-control" id="fs" v-model="newAdmin.id_fasil">
+                  <option value="" disabled selected>Pilih Fasil</option>
+                  <option v-for="fasil in arrFasil" :value="fasil.id">{{fasil.nama}}</option>
+                </select>
+              </div>
+              <div class="form-group">
                 <label for="nm">Nama :</label>
                 <input id="nm" type="text" class="form-control" v-model="newAdmin.nama">
               </div>
@@ -31,8 +38,8 @@
                 <input id="wa2" type="text" class="form-control" v-model="newAdmin.nomorWA2">
               </div>
 
-              <a class="btn btn-success" type="submit" name="action" @click="saveNewAdmin()">add Admin</a>
-              <a type="button" class="btn btn-info" href="view_selectAdmin.php">cancel</a>
+              <a class="btn btn-success" type="submit" name="action" @click="saveNewAdmin()" >add Admin</a>
+              <a type="button" class="btn btn-info" href="view_selectAdmin.php">back to list</a>
             </form>
           </div>
 

@@ -16,25 +16,27 @@
       <h2>Lis Reviewer</h2>
       Pastikan untuk meng-update data Reviewer, jika ada perubahan data <br><br>
       <a type="button" class="btn btn-success" href="/hots/hotsfasil/view_addReviewer.php">add Reviewer</a>
-      <a type="button" class="btn btn-info" href="/hots/hotsfasil/">back</a>
+      <a type="button" class="btn btn-info" href="/hots/hotsfasil/">back to menu</a>
       <table class="table table-hover">
         <thead>
           <tr>
-            <!-- <th>ID</th> -->
+            <th>ID</th>
             <th>Nama</th>
             <th>Nomor WA</th>
-            <!-- <th>Nomor WA2</th> -->
+            <th>Nomor WA2</th>
             <th>Status</th>
+            <th>Fasil</th>
             <th>Update</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="reviewer in this.arrReviewer">
-            <!-- <td>{{admin.id}}</td> -->
+            <td>{{reviewer.id}}</td>
             <td>{{reviewer.nama}}</td>
             <td>{{reviewer.nomorWA}}</td>
-            <!-- <td>{{admin.nomorWA2}}</td> -->
-            <td>{{reviewer.status}}</td>
+            <td>{{reviewer.nomorWA2}}</td>
+            <td>{{reviewer.status2}}</td>
+            <td>{{reviewer.fasil}}</td>
             <td><button type="button" class="btn btn-warning">update</button></td>
           </tr>
         </tbody>

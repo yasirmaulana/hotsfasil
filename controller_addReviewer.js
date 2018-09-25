@@ -3,24 +3,43 @@ var app = new Vue({
   el: "#addReviewer",
 
   data: {
+    arrFasil: [],
     newReviewer: {
       nama: '',
       nomorWA1: '',
       nomorWA2: '',
+      id_fasil: '',
     },
   },
 
   mounted: function(){
-    // this.getReviewer()
-    // this.getSurah()
+    this.getFasil()
   },
 
   methods: {
+    getFasil: function () {
+      axios.get(url+"readFasil")
+       .then(function(response){
+         app.arrFasil = response.data.fasils
+         // console.log('>>>>>>>>>>>>> admin',app.arrFasil)
+       })
+       .catch(function(error){
+         // console.log('============',error)
+       })
+    },
+
     validasiForm: function () {
       let cekWA1 = this.newReviewer.nomorWA1.match(/[^0-9]/g)
       let cekWA2 = this.newReviewer.nomorWA2.match(/[^0-9]/g)
 
-      if (this.newReviewer.nama === '') {
+      if (this.newReviewer.id_fasil === '') {
+        swal({
+          icon: 'error',
+          title: 'Oops',
+          text: 'Fasil wajib diisi'
+        })
+        return false
+      } else if (this.newReviewer.nama === '') {
         swal({
           icon: 'error',
           title: 'Oops',
@@ -57,14 +76,14 @@ var app = new Vue({
     saveNewReviewer: function(){
       let cek = this.validasiForm()
       if(cek){
-        // console.log('dodododododdod')
         var formData = this.toFormdata(this.newReviewer)
         axios.post(url+"saveNewReviewer", formData)
           .then(function(response){
             swal('Menambahkan Reviewer Baru', 'Berhasil diinput', 'success')
-            // console.log(response)
+            console.log(response)
           })
           .catch(function(error){
+            console.log('============',error)
             swall({
               icon: 'error',
               title: 'Oops...',
