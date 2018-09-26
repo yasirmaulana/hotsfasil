@@ -1,31 +1,18 @@
-// var url = "http://hots.kauny.com/hotsfasil/model_grup.php?action="
 var url = "http://localhost/hots/hotsfasil/model_grup.php?action="
 var app = new Vue({
-  el: "#selectGrup",
+  el: "#updateGrup",
 
   data: {
-    arrGrup: [],
     grupSelected: {},
     arrAdmin: [],
     arrReviewer: []
   },
 
   mounted: function(){
-    this.getGrup()
+    // this.getFasil()
   },
 
   methods: {
-    getGrup: function(){
-      axios.get(url+"readGrup")
-       .then(function(response){
-         app.arrGrup = response.data.grups
-         // console.log('>>>>>>>>>>>>> admin',this.arrReviewer)
-       })
-       .catch(function(error){
-         // console.log('============',error)
-       })
-    },
-
     getGrupSelected: function(objGrup){
       this.grupSelected = objGrup
     },
@@ -81,6 +68,7 @@ var app = new Vue({
           })
         })
     }
+
 
   }
 

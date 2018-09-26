@@ -1,4 +1,5 @@
-var url = "http://localhost/hots/hotsfasil/model_admin.php?action="
+// var url = "http://hots.kauny.com/hotsfasil/model_reviewer.php?action="
+var url = "http://localhost/hots/hotsfasil/model_reviewer.php?action="
 var app = new Vue({
   el: "#addReviewer",
 
@@ -80,10 +81,10 @@ var app = new Vue({
         axios.post(url+"saveNewReviewer", formData)
           .then(function(response){
             swal('Menambahkan Reviewer Baru', 'Berhasil diinput', 'success')
-            console.log(response)
+            // console.log(response)
           })
           .catch(function(error){
-            console.log('============',error)
+            // console.log('============',error)
             swall({
               icon: 'error',
               title: 'Oops...',

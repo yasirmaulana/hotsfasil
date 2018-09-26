@@ -1,3 +1,4 @@
+// var url = "http://hots.kauny.com/hotsfasil/model_admin.php?action="
 var url = "http://localhost/hots/hotsfasil/model_admin.php?action="
 var app = new Vue({
   el: "#addAdmin",

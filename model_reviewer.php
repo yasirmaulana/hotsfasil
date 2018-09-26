@@ -54,6 +54,28 @@ if($action == 'saveNewReviewer'){
 
 }
 
+// UPDATE DATA ADMIN
+if($action == 'updateReviewer'){
+
+  $id = $_POST['id'];
+  $nama = $_POST['nama'];
+  $nomorWA1 = $_POST['nomorWA'];
+  $nomorWA2 = $_POST['nomorWA2'];
+  $status = $_POST['status'];
+
+  $result = $conn->query("UPDATE hots_reviewer set nama = '$nama', nomorWA = '$nomorWA1', nomorWA2 = '$nomorWA2', status = $status WHERE id = $id");
+
+  // $cek = "UPDATE hots_admin set nama = `$nama`, nomorWA = `$nomorWA1`, nomorWA2 = `$nomorWA2`, status = `$status` WHERE id = `$id`";
+
+  if($result){
+    // $res['message'] = "laporan berhasil tersimpan";
+  } else {
+    // $res['error'] = $cek;
+  }
+
+}
+
+
 $conn->close();
 
 header("Content-type: application/json");

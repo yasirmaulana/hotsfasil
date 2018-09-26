@@ -54,5 +54,5 @@
   <script type="text/javascript" src="../axios.js"></script>
   <script type="text/javascript" src="../vue.js"></script> -->
   <script type="text/javascript" src="controller_addReviewer.js"></script>
-</body>
+</body> 
 </html>
